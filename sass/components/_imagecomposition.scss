@@ -1,0 +1,36 @@
+.composition{
+    position:relative;
+    &__photo{
+        width:55%;
+        box-shadow:0 1rem 2rem rgba($color-black,.2);
+        border-radius: 2px;
+        position:absolute;
+        outline-offset: 1rem;
+        transition: all 0.2s;
+        z-index:5;
+        &--p1{
+            top:-2rem;
+            left:0;
+        }
+        &--p2{
+            right:1rem;
+            top:2rem;
+        }
+        &--p3{
+            top:10rem;
+            left:6rem;
+        }
+        &:hover{
+            z-index:10;
+            transform: scale(1.05) translateY(-2px);
+            outline:1.2rem solid $color-primary;
+        }
+    }
+
+    //to make the rest of the images smaller when one image is hovered
+    &:hover &__photo:not(:hover){
+        transform: scale(.95);
+    }
+  
+}
+

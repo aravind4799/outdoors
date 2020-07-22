@@ -1,0 +1,228 @@
+/* STYLE SHEET BEFORE USING SASS */
+
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: inherit;
+}
+html{
+    /* covert all  pix into rem for responsive web design
+    and by setting font-size to 10px disables the user ability to 
+    change font-size since we overwrite it therefore it advised to use %.. 
+    since bowser default font size is 16px
+    x% of 16px = 10px find x*/
+    font-size:62.5%
+}
+
+body{
+ padding: 3rem;
+ /* divide every pix by 10 and convert into rem
+ means 3rem = 3* 62.5% of browser default size = 16px
+            = 3*10=30px */
+ font-weight: 300;
+ font-family: "Lato",sans-serif;
+ line-height: 1.7;
+ font-size: 1.6rem;
+ color:#777;
+ box-sizing: border-box;
+}
+
+.header{
+    height: 95vh;
+    background-image: 
+    linear-gradient(to right,rgb(126, 213, 111,0.8),rgb(40, 180, 133,0.8)),
+    url("../img/hero.jpg");
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0,100% 0,100% 75vh,0 100%);
+    position: relative;
+}
+
+.header__logobox{
+    position: absolute;
+    /* position itself with reference of the parent ,with is header */
+    top:4rem;
+    left:4rem;
+}
+
+.header__logobox--logo{
+    height:3.5rem;
+    /* the width of image is automatically adujusted 
+    so its enough to change either width or height property */
+}
+
+.header__contentbox{
+    color:#fff;
+    position:absolute;
+    /* parent is header */
+    top:40%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    backface-visibility: hidden;
+    text-align: center;
+}
+
+.header__contentbox--head{
+    font-size: 6rem;
+    display:block;
+    letter-spacing: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    animation-name: moveinleft;
+    animation-duration: 1s;
+    animation-timing-function:ease-out;
+    /* how fast should each of the animation phase should happen */
+
+    /* animation-delay: 3s;
+    animation-iteration-count: 2;
+    animation-timing-function:ease-out; */
+}
+.header__contentbox--slogan{
+  display:block;
+  text-transform: uppercase;
+  letter-spacing: 1.75rem;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 6rem;
+  animation-name: moveinright;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+/* define an animation moveinleft */
+@keyframes moveinleft{
+    0%{
+        /* what should animation look at the start */
+        opacity: 0;
+        transform:translateX(-10rem)
+        /* -100 in x direction --> means direction from right to left, where as +100
+        means from left to right */
+    }
+    80%{
+        /* what should animation look at almost 80% heading towards the end  */
+        transform:translateX(1rem)
+    }
+    100%{
+        /* what should the element u are animating should at the end */
+        opacity:1;
+        /* translate(0)--> makes the element looks like original */
+        transform:translate(0)
+    }
+}
+
+@keyframes moveinright{
+  0%{
+      opacity:0;
+      transform: translatex(10rem);
+  }
+  80%{
+      transform: translateX(-1rem);
+  }
+  100%{
+      opacity:1;
+      transform:translate(0)
+  }
+}
+
+@keyframes moveinbottom{
+    0%{
+        opacity:0;
+        transform: translateY(3rem);
+    }
+    100%{
+        opacity:1;
+        transform:translate(0);
+    }
+  }
+
+
+.btn:link,
+.btn:visited{
+    text-decoration: none;
+    /* as link are represented as a blue with a underline by default */
+    text-transform: capitalize;
+    font-size:2rem;
+    padding: 1rem 4rem;
+    border-radius: 10rem;
+    display:inline-block;
+    transition: all 0.2s;
+    position:relative;
+    /* transition is required at the initial state for all effects 
+    we have applied to diffrent states to work */
+}
+
+/* Does the Order of Pseudo-Classes Matter? In the case of pseudo-classes,
+ the order does matter. :hover styling will override :active styling, 
+ so it must be declared before the :active styling */
+
+.btn:hover{
+    transform:translateY(-3px);
+    /* it goes up */
+    box-shadow: 0 2rem 3rem rgba(0,0,0,0.4);
+    /* 1st value is X value of shadow length
+    2nd value is Y value of shadow length
+    3rd value is the BLUR effect
+    4th value is the color of the shadow */
+  }
+
+.btn:active{
+    transform:translateY(-1px);
+    box-shadow: 0 5px 1rem rgba(0,0,0,0.4);
+}
+
+.btn--white{
+    background-color: #fff;
+    color:#777;
+}
+
+/* creating a pseudo delement after .btn */
+.btn::after{
+    content:"";
+    /* content is required to pseudo element to work in 
+    this case we aint adding anything; */
+    display:inline-block;
+    /* since we need to change height and width */
+    height:100%;
+    width:100%;
+    /* creates a inline element same as .btn dimensions since we set height and
+    width as 100% */
+    border-radius: 10rem;
+    /* note we are styling ::after element exactly same as .btn */
+    position:absolute;
+    top:0;
+    left:0;
+    /* it searches for position:relative element up the tree,, it takes the first element 
+    it finds as reference to position  */
+    /* therefore set .btn:live as relative */
+    z-index: -1;
+    /* since this element is exact same as the btn and at same position we need 
+    this after element to be displayed behind the original btn  */
+
+    transition: all 0.4s;
+    /* transition required so that all transforms on different states works */
+}
+/* having same style as btn */
+.btn--white::after{
+    background-color: #fff;
+    color:#777;
+}
+/* to display after element on hover */
+.btn:hover::after{
+    transform:scaleX(1.4) scaleY(1.6);
+    /* to increase size */
+    opacity:0;
+    /* to fade out */
+}
+.btn--animation{
+    animation:moveinbottom 0.5s ease-out 0.75s;
+    /* animation:animation-name animation-timing animation-effect animation-delay */
+    animation-fill-mode: backwards;
+    /* it applys the animation of 0% at the start.. 
+    so that we dont get to see the button only after a delay 0.75s we see the 
+    animation  */
+}
+
+/* padding: 0 25rem;
+means padding of 0px top and bottom
+and left and right a padding of 25rem */
