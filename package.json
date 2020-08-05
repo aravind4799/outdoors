@@ -1,10 +1,9 @@
 {
   "name": "natour",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+    "compile:sass": "node-sass sass/main.scss css/style.css "
   },
   "author": "its me",
   "license": "ISC",
@@ -12,6 +11,16 @@
     "node-sass": "^4.14.1"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "live-server": "^1.2.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aravind4799/outdoors.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aravind4799/outdoors/issues"
+  },
+  "homepage": "https://github.com/aravind4799/outdoors#readme",
+  "description": ""
 }
