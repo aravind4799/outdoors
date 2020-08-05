@@ -1,5 +1,5 @@
 body{
-    padding: 3rem;
+    
     font-weight: 300;
     font-family: "Lato",sans-serif;
     line-height: 1.7;
@@ -8,7 +8,6 @@ body{
    }
 
    .header__headingbox{
-
     color:$color-white;
     position:absolute;
     top:40%;
@@ -26,6 +25,12 @@ body{
         animation-name: moveinleft;
         animation-duration: 1s;
         animation-timing-function:ease-out;
+
+        @include respond(phone){
+          letter-spacing: 1.5rem;
+          font-size:5rem;
+        }
+
     }
     &--sub{
       display:block;
@@ -37,6 +42,10 @@ body{
       animation-name: moveinright;
       animation-duration: 1s;
       animation-timing-function: ease-out;
+
+      @include respond(phone){
+        letter-spacing: .5rem;
+      }
     }
 
 }
@@ -52,6 +61,14 @@ body{
   color:transparent;
   transition: all .2s;
   letter-spacing: 3px;
+
+  @include respond(tab-port){
+    font-size: 3.7rem;
+  }
+
+  @include respond(phone){
+    font-size:3rem;
+  }
 
   &:hover{
     transform: skewY(2deg) skewX(3deg);

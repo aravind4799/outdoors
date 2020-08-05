@@ -5,8 +5,14 @@
     url("../img/hero.jpg");
     background-size: cover;
     background-position: top;
+    -webkit-clip-path: polygon(0 0,100% 0,100% 75vh,0 100%);
     clip-path: polygon(0 0,100% 0,100% 75vh,0 100%);
     position: relative;
+
+    @include respond(phone){
+    -webkit-clip-path: polygon(0 0,100% 0,100% 85vh,0 100%);
+    clip-path: polygon(0 0,100% 0,100% 85vh,0 100%);
+    }
 
     &__logobox{
         position: absolute;
@@ -14,7 +20,11 @@
         left:4rem;
         &--logo{
             height:3.5rem;
-           
+
+            @include respond(tab-port){
+                height:4.4rem;
+            }
         }
+       
     }
 }

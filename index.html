@@ -14,6 +14,28 @@
         <title>Natours | Exciting tours for adventurous people</title>
     </head>
     <body>
+
+        <div class="navigation">
+           <input type="checkbox" id="navigation-toggle" class="navigation__checkbox">
+
+           <label for="navigation-toggle" class="navigation__button">
+               <span class="navigation__icon">&nbsp;</span>
+           </label>
+
+           <div class="navigation__background">&nbsp;</div>
+
+           <nav class="navigation__nav">
+              <ul class="navigation__list">
+                  <li class="navigation__item"><a href="#" class="navigation__link"> <span>01</span>About Natours </a></li>
+                  <li class="navigation__item"><a href="#" class="navigation__link"> <span>02</span>Your Benifits     </a></li>
+                  <li class="navigation__item"><a href="#" class="navigation__link"> <span>03</span>Popular Tours </a></li>
+                  <li class="navigation__item"><a href="#" class="navigation__link"> <span>04</span>Stories </a></li>
+                  <li class="navigation__item"><a href="#" class="navigation__link"> <span>05</span>Book now </a></li>
+              </ul>
+           </nav>
+
+        </div>
+
         <header class="header">
            <div class="header__logobox">
                <img src="./img/logo-white.png" alt="logo" class="header__logobox--logo" />
@@ -168,7 +190,7 @@
                 </div>
             </section>
 
-            <section class="section-tours">
+            <section class="section-tours" id="section-tours">
 
                 <div class="u-center-text u-margin-bottom-big">
                     <h2 class="heading-secondary" >
@@ -205,7 +227,7 @@
                                    </div>
 
                                    <div class="card__booknow">
-                                    <a href="#" class="btn btn--white ">Book now</a>
+                                    <a href="#popup" class="btn btn--white ">Book now</a>
                                    </div>
                                
                             </div>
@@ -245,7 +267,7 @@
                                    </div>
 
                                    <div class="card__booknow">
-                                    <a href="#" class="btn btn--white ">Book now</a>
+                                    <a href="#popup" class="btn btn--white ">Book now</a>
                                    </div>
                                
                             </div>
@@ -279,7 +301,7 @@
                                    </div>
 
                                    <div class="card__booknow">
-                                    <a href="#" class="btn btn--white ">Book now</a>
+                                    <a href="#popup" class="btn btn--white ">Book now</a>
                                    </div>
                                
                             </div>
@@ -295,15 +317,12 @@
 
             <section class="section-stories">
 
-
                 <div class="bg-vedio">
-
                     <video class="bg-vedio__content" autoplay loop muted>
                         <source src="vedio/video.mp4" type="video/mp4" >
                         <source src="vedio/video.webm" type="video/webm">  
                         vedio is not supported in your browser
                     </video>
-                  
                 </div>
 
                 <div class="row">
@@ -353,10 +372,127 @@
 
             </section>
 
+            <section class="section-book">
+                
+                <div class="book">
 
+                    <div class="book__form">
 
+                        <form action="#" class="form">
+
+                            <div class="u-margin-bottom-medium">
+                                 <h2 class="heading-secondary" >
+                                     start booking now
+                                 </h2>
+                             </div>
+     
+                             <div class="form__group">
+                                 <input type="text" class="form__input" placeholder="Fullname" id="name" autocomplete="off">
+                                 <label for="name" class="form__label">Fullname</label>
+                             </div>
+     
+                             <div class="form__group">
+                                 <input type="email" class="form__input" placeholder="Email address" id="email" autocomplete="off">
+                                 <label for="email" class="form__label">Email Address</label>
+                             </div>
+
+                            <div class="form__group">
+
+                                <div class="form__radiogroup">
+                                    <input type="radio" class="form__radioinput" id="click1" name="size">
+                                    <label class="form__radiolabel" for="click1">
+                                        <span class="form__radiobutton"></span>
+                                        Small tour groups
+                                    </label>
+                                </div>                       
+                            
+                                <div class="form__radiogroup u-margin-bottom-medium">
+                                    <input type="radio" class="form__radioinput" id="click2" name="size">
+                                    <label  class="form__radiolabel"for="click2"> 
+                                        <span class="form__radiobutton"></span>
+                                        Large tour groups
+                                    </label>
+                                </div> 
+
+                            </div>
+                            
+                          <div class="form__group">
+                              <button class="btn btn--green">Next step &rarr;</button>
+                          </div>  
+     
+                         </form>
+
+                    </div>
+
+                </div>
+
+            </section>
 
         </main>
+
+        <footer class="footer">
+
+            <div class="footer__logo-box">
+                <img src="img/logo-green-2x.png" alt="logo image" class="footer__logo">
+            </div>
+
+            <div class="row">
+                <div class="col-1-of-2">
+
+                    <div class="footer__navigation">
+                        
+                        <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link"> Company </a></li>
+                            <li class="footer__item"><a href="#" class="footer__link"> Contact us </a></li>
+                            <li class="footer__item"><a href="#" class="footer__link"> Privacy policy </a></li>
+                            <li class="footer__item"><a href="#" class="footer__link"> Terms </a></li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col-1-of-2 u-center-text">
+                    <p class="footer__copyright">
+                        Handcrafted by <a href="#" class="footer__link">Aravind</a>
+                        <br>
+                        Copyright &copy; 2020
+                    </p>
+
+                </div>
+            </div>
+
+        </footer>
+
+        <!-- popup card -->
+
+        <div class="popup" id="popup">
+
+            <div class="popup__content">
+
+                <div class="popup__left">
+                        <img src="img/nat-8.jpg" alt="tour image" class="popup__image">   
+                        <img src="img/nat-9.jpg" alt="tour image" class="popup__image"> 
+                </div> 
+                    
+                    
+                
+
+                <div class="popup__right">
+                    <a href="#section-tours" class="popup__cross">&times;</a>
+                    <h1 class="heading-secondary u-margin-bottom-small ">Start booking now</h1>
+                    <h2 class="heading-tertiary u-margin-bottom-small">Important &ndash; read this guidelines before bookings   </h2>
+                    <p class="popup__text">
+                        Suspendisse eu diam vel erat vehicula congue. Maecenas rhoncus luctus lacus quis finibus. Suspendisse vel facilisis nulla, vitae luctus nulla. Integer risus libero, condimentum eu lectus ac, tristique pharetra sapien. Sed dignissim urna vel volutpat iaculis. Aenean consectetur eros sed pulvinar efficitur. Integer lorem turpis, bibendum eu sodales sed, iaculis nec dui. Proin porttitor rhoncus.reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+                    </p>
+                    <a href="" class="btn btn--green .u-center-text">book now
+
+                    </a>
+                </div>
+
+               
+
+            </div>
+
+        </div>
 
         
         

@@ -1,5 +1,5 @@
 .btn:link,
-.btn:visited{
+.btn:visited,.btn{
     text-decoration: none;
     text-transform: capitalize;
     font-size:2rem;
@@ -8,6 +8,14 @@
     display:inline-block;
     transition: all 0.2s;
     position:relative;
+
+    //for <button> element
+    border: none;
+    outline: none;
+
+    @include respond(tab-port){
+        font-size: 2.2rem;
+    }
    
 }
 
@@ -21,7 +29,8 @@
         }
       }
     
-    &:active{
+    &:active,&:focus{
+        //&:focus for button element
         transform:translateY(-1px);
         box-shadow: 0 5px 1rem rgba($color-black,.4);
     }

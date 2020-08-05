@@ -5,3 +5,25 @@
        display:table;
    }
 }
+
+// 0px-600px mobile 
+// 600px-900px tablet portrait
+// 900px-1200px tablet landscape
+// 1200px-1800px desktop(the code we wrote first: desktop first approach);
+// 1800px+ large desktop;
+
+@mixin respond($breakpoint){
+    // 1em=16px the root font-size
+    @if $breakpoint == "phone"{
+        @media(max-width: 37.5em){@content};
+    }
+    @if $breakpoint == "tab-port"{
+        @media(max-width: 56.25em){@content};
+    }
+    @if $breakpoint == "tab-land"{
+        @media(max-width: 75em){@content};
+    }
+    @if $breakpoint == "big-desk"{
+        @media(min-width: 112.5em){@content};
+    }
+}
